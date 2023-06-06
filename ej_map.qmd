@@ -2,7 +2,16 @@
 title: "ej_map"
 format: html
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r}
+library(sf)
+library(tidyverse)
+
+```
+
 
 ## EJ Map - ATSDR
 
@@ -10,6 +19,11 @@ Load geobase file
 
 ```{r}
 
+ej_map <- st_read("G:/My Drive/Air Pollution EJ/GIS EJ/United states.gdb", layer = "eji_ranks") %>% 
+  st_zm() %>% 
+  as("Spatial")
+
+ej_map %>% as_tibble()
 
 
 ```
@@ -21,7 +35,7 @@ From Data dictionary documentation:
 
 SPL_EJI: Summation of the HVM, EBI, and SVI module percentile ranks
 
-RPL_EJI: Percentile ranks of SPL_EJI
+*RPL_EJI: Percentile ranks of SPL_EJI*
 
 SPL_SER: Summation of the EB, and SV module percentile ranks
 
@@ -33,9 +47,18 @@ EPL_PM: Percentile rank of annual mean days above PM2.5 regulatory standard - 3-
 
 SPL_EBM_THEME1: Domain consisting of ozone, PM2.5, air toxics cancer risk, and diesel particulate matter.
 
-RPL_EBM_DOM1: Percentile rank of domain consisting of ozone, PM2.5, air toxics cancer risk, and diesel particulate matter.
+*RPL_EBM_DOM1: Percentile rank of domain consisting of ozone, PM2.5, air toxics cancer risk, and diesel particulate matter.*
+
+# https://r-spatial.github.io/sf/articles/sf5.html
+
+```{r}
+plot(ej_map, max_plot = 1)
+
+plot(ej_map["SPL_EBM_THEME1"])
+
+plot(ej_map$RPL_EJI)
 
 
-
+```
 
 
