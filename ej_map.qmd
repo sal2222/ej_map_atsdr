@@ -1,0 +1,41 @@
+---
+title: "ej_map"
+format: html
+editor: visual
+---
+
+## EJ Map - ATSDR
+
+Load geobase file
+
+```{r}
+
+
+
+```
+
+
+From Data dictionary documentation:
+
+2022 variables:
+
+SPL_EJI: Summation of the HVM, EBI, and SVI module percentile ranks
+
+RPL_EJI: Percentile ranks of SPL_EJI
+
+SPL_SER: Summation of the EB, and SV module percentile ranks
+
+RPL_SER: Percentile ranks of SPL_SER
+
+EPL_OZONE: Percentile rank of annual mean days above O3 regulatory standard - 3-year average
+
+EPL_PM: Percentile rank of annual mean days above PM2.5 regulatory standard - 3-year average
+
+SPL_EBM_THEME1: Domain consisting of ozone, PM2.5, air toxics cancer risk, and diesel particulate matter.
+
+RPL_EBM_DOM1: Percentile rank of domain consisting of ozone, PM2.5, air toxics cancer risk, and diesel particulate matter.
+
+
+
+
+
